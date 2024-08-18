@@ -1,2 +1,5 @@
 # DanimaJS
-Cursor position based transform animations for HTML Elements
+Cursor based transform animations library for HTML Elements.
+
+## Created By
+David Fuentes (@davefellow)
