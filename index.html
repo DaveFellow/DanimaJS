@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse-Position Transform Box</title>
+    <style>
+        :root {
+            --box1-size: 20rem;
+            --box2-size: 15rem;
+            --box3-size: 10rem;
+            --box4-size: 5rem;
+        }
+        
+        html {
+            background-color: #ccc;
+            font-family: sans-serif;
+        }
+
+        p {
+            font-size: 1.5rem;
+        }
+
+        .danima-elem {
+            position: absolute;
+            /* background-image: url(https://i.pinimg.com/originals/68/15/57/681557d5e245061871e6036e360c8b88.jpg); */
+            background-image: url(https://pngimg.com/uploads/star/star_PNG1592.png);
+            /* background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg); */
+            background-size: cover;
+        }
+
+        .box--1 {
+            width: var(--box1-size);
+            height: var(--box1-size);
+            top: 10rem;
+            left: 10rem;
+            background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg);
+        }
+
+        .box--2 {
+            width: var(--box2-size);
+            height: var(--box2-size);
+            top: 15rem;
+            right: 10rem;
+            background-image: url(https://e3.365dm.com/24/04/2048x1152/skynews-sydney-sweeney-glaad-media-awards_6525454.jpg);
+        }
+
+        .box--3 {
+            width: var(--box3-size);
+            height: var(--box3-size);
+            bottom: 10rem;
+            left: 20rem;
+            background-image: url(https://phantom-marca-us.unidadeditorial.es/6b8b351facf5ebe085214dfae5d5240e/resize/828/f/jpg/assets/multimedia/imagenes/2024/05/06/17149989971067.jpg);
+        }
+
+        .box--4 {
+            width: var(--box4-size);
+            height: var(--box4-size);
+            bottom: 15rem;
+            right: 30rem;
+            background-image: url(https://www.hola.com/horizon/square/d678aa86530e-sydney-sweeney-looks-t.jpg);
+        }
+
+        .box--scalable {
+            width: 7rem;
+            height: 7rem;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            for (let i = 0; i < 200; i++) {
+                const div = document.createElement('div');
+                div.classList.add('danima-elem', 'box--scalable');
+                div.style.left = `${Math.random() * window.innerWidth}px`;
+                div.style.top = `${Math.random() * window.innerHeight}px`;
+                div.dataset.danimaScaleSpeed = '1,1';
+                div.dataset.danimaScaleMin = '0.3, 0.3';
+                div.dataset.danimaScaleMax = '0.9, 0.9';
+                div.dataset.danimaRotationSpeed = '2, 2';
+                div.dataset.danimaRotationLimit = '85';
+                div.dataset.danimaTranslationSpeed = '2, 2';
+                document.body.appendChild(div);
+            }
+        });
+    </script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="danima-elem box--1" data-danima-rotation-speed="1,1" data-danima-translation-speed="1,1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <div class="danima-elem box--2" data-danima-rotation-speed="1,1" data-danima-translation-speed="-0.3,-0.2" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <div class="danima-elem box--3" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.2,0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <div class="danima-elem box--4" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.05,-0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+</body>
+</html>
