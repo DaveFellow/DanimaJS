@@ -13,8 +13,13 @@
         }
         
         html {
-            background-color: #ccc;
+            background-color: #5495eb;
             font-family: sans-serif;
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
         }
 
         p {
@@ -22,10 +27,8 @@
         }
 
         .danima-elem {
+            z-index: 1;
             position: absolute;
-            /* background-image: url(https://i.pinimg.com/originals/68/15/57/681557d5e245061871e6036e360c8b88.jpg); */
-            background-image: url(https://pngimg.com/uploads/star/star_PNG1592.png);
-            /* background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg); */
             background-size: cover;
         }
 
@@ -34,6 +37,7 @@
             height: var(--box1-size);
             top: 10rem;
             left: 10rem;
+            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg); */
             background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg);
         }
 
@@ -42,6 +46,7 @@
             height: var(--box2-size);
             top: 15rem;
             right: 10rem;
+            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg); */
             background-image: url(https://e3.365dm.com/24/04/2048x1152/skynews-sydney-sweeney-glaad-media-awards_6525454.jpg);
         }
 
@@ -50,6 +55,7 @@
             height: var(--box3-size);
             bottom: 10rem;
             left: 20rem;
+            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg); */
             background-image: url(https://phantom-marca-us.unidadeditorial.es/6b8b351facf5ebe085214dfae5d5240e/resize/828/f/jpg/assets/multimedia/imagenes/2024/05/06/17149989971067.jpg);
         }
 
@@ -58,12 +64,35 @@
             height: var(--box4-size);
             bottom: 15rem;
             right: 30rem;
+            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg); */
             background-image: url(https://www.hola.com/horizon/square/d678aa86530e-sydney-sweeney-looks-t.jpg);
         }
 
         .box--scalable {
             width: 7rem;
             height: 7rem;
+            /* background-image: url(https://i.pinimg.com/originals/68/15/57/681557d5e245061871e6036e360c8b88.jpg); */
+            background-image: url(https://pngimg.com/uploads/star/star_PNG1592.png);
+            /* background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg); */
+        }
+
+        .intro {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intro-content {
+            width: 40rem;
+            background: #ffffff59;
+            padding: 1rem 4rem;
+            border-radius: .4rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
         }
     </style>
     <script>
@@ -87,6 +116,15 @@
     <script src="./index.js"></script>
 </head>
 <body>
+    <div class="intro">
+        <div class="danima-elem intro-content" data-danima-rotation-speed="0.3, 0.3" data-danima-translation-speed="0.3, 0.3" data-danima-rotation-limit="20">
+            <h1>Danima JS</h1>
+            <p>Cursor based transform animations library for HTML Elements.
+                
+            <h2>Created By</h2>
+            <p>David Fuentes (GitHub: davefellow)</p></p>
+        </div>
+    </div>
     <div class="danima-elem box--1" data-danima-rotation-speed="1,1" data-danima-translation-speed="1,1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
     <div class="danima-elem box--2" data-danima-rotation-speed="1,1" data-danima-translation-speed="-0.3,-0.2" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
     <div class="danima-elem box--3" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.2,0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>

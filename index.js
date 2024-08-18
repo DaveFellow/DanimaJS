@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => danimaElemList = document.qu
 
 document.addEventListener('mousemove', (event) => {
     if (!danimaElemList.length) return;
+    const mousePosition = getByAxis([event.clientX, event.clientY]);
     danimaElemList.forEach((elem) => {
         const elemCenter = getElemCenterPosition(elem);
-        const mousePosition = getByAxis([event.clientX, event.clientY]);
         const relativeMousePosition = getByAxis([event.clientX - elemCenter.x, event.clientY - elemCenter.y]);
 
         const transition = elem.dataset.danimaTransition ?? '0.075s';
