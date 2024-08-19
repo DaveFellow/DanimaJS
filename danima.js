@@ -1,8 +1,17 @@
-let danimaElemList;
-document.addEventListener('DOMContentLoaded', () => danimaElemList = document.querySelectorAll('.danima-elem'));
+function initDanima() {
+    let danimaElemList = [];
+    document.addEventListener('DOMContentLoaded', () => {
+        danimaElemList = document.querySelectorAll('.danima-elem');
+        transform(danimaElemList, {
+            clientX: screen.width / 2,
+            clientY: screen.height / 2
+        });
+    });
+    
+    document.addEventListener('mousemove', (e) => transform(danimaElemList, e));
+}
 
-document.addEventListener('mousemove', (event) => {
-    if (!danimaElemList.length) return;
+function transform(danimaElemList = [], event) {
     const mousePosition = getByAxis([event.clientX, event.clientY]);
     danimaElemList.forEach((elem) => {
         const elemCenter = getElemCenterPosition(elem);
@@ -16,7 +25,7 @@ document.addEventListener('mousemove', (event) => {
         const scale = getScale(elem, relativeMousePosition, mousePosition, elemCenter);
         elem.style.transform = `${translation} ${rotation} ${scale}`;
     });
-});
+}
 
 function getTranslation(element, relativeMousePosition) {
     const speedValues = getPair(element.dataset.danimaTranslationSpeed ?? '0,0').map(n => (n / 10) * -1);
@@ -115,3 +124,5 @@ function checkDistance(relativeMousePosition, maxDistance) {
     
     return withinDistance.x && withinDistance.y;
 }
+
+export { initDanima };

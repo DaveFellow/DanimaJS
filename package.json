@@ -1,0 +1,30 @@
+{
+  "name": "danima-js",
+  "version": "0.5.0",
+  "description": "Cursor based transform animations library for HTML Elements",
+  "main": "danima.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaveFellow/DanimaJS.git"
+  },
+  "keywords": [
+    "animation",
+    "cursor",
+    "transform",
+    "rotation",
+    "scale",
+    "translation",
+    "ux",
+    "ui",
+    "html"
+  ],
+  "author": "David Fuentes (davefellow)",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/DaveFellow/DanimaJS/issues"
+  },
+  "homepage": "https://github.com/DaveFellow/DanimaJS#readme"
+}
