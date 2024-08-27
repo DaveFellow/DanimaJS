@@ -35,9 +35,9 @@ You can set it to "1, 1" and use it as a reference to adjust the desired value.
 ### data-danima-rotation-limit
 Value format: number
 
-This sets a limit to the angle set while rotating the element, if it's not present or set to "0", the element will rotate as much as possible.
+This sets a limit to the angle set while rotating the element, if it's not present or set to "0", the element will rotate as much as possible depending on mouse position.
 
-It's on degrees (0°-360°).
+The value must be set on degrees (0°-360°).
 
 ### data-danima-scale-speed
 Value format: number, number
@@ -48,9 +48,18 @@ You can set it to "1, 1" and use it as a reference to adjust the desired value.
 
 
 ### data-danima-scale-min
+Value format: number
+
+The minimum size the element will be scaled to.
+
+The value is currently only set in pixels.
 
 
 ### data-danima-scale-max
+Value format: number
 
+The maximum size the element will be scaled to.
+
+The value is currently only set in pixels.
 
 
