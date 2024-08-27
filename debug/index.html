@@ -9,13 +9,17 @@
             --box1-size: 20rem;
             --box2-size: 15rem;
             --box3-size: 10rem;
-            --box4-size: 5rem;
+            --box4-size: 20rem;
         }
         
         html {
-            background-color: #5495eb;
+            background-image: radial-gradient(#133c71, #0b1d35);
             font-family: sans-serif;
             height: 100%;
+        }
+
+        h1, h2 {
+            color: #0c1e35;
         }
 
         body {
@@ -27,9 +31,15 @@
         }
 
         .danima-elem {
-            z-index: 1;
             position: absolute;
             background-size: cover;
+        }
+
+        .box {
+            z-index: 1;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         .box--1 {
@@ -37,8 +47,7 @@
             height: var(--box1-size);
             top: 10rem;
             left: 10rem;
-            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg); */
-            background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg);
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg);
         }
 
         .box--2 {
@@ -46,8 +55,7 @@
             height: var(--box2-size);
             top: 15rem;
             right: 10rem;
-            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg); */
-            background-image: url(https://e3.365dm.com/24/04/2048x1152/skynews-sydney-sweeney-glaad-media-awards_6525454.jpg);
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg);
         }
 
         .box--3 {
@@ -55,25 +63,19 @@
             height: var(--box3-size);
             bottom: 10rem;
             left: 20rem;
-            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg); */
-            background-image: url(https://phantom-marca-us.unidadeditorial.es/6b8b351facf5ebe085214dfae5d5240e/resize/828/f/jpg/assets/multimedia/imagenes/2024/05/06/17149989971067.jpg);
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/ba/Javascript_badge.svg);
         }
 
         .box--4 {
             width: var(--box4-size);
             height: var(--box4-size);
-            bottom: 15rem;
-            right: 30rem;
-            /* background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg); */
-            background-image: url(https://www.hola.com/horizon/square/d678aa86530e-sydney-sweeney-looks-t.jpg);
+            bottom: 10rem;
+            right: 20rem;
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg);
         }
 
         .box--scalable {
-            width: 7rem;
-            height: 7rem;
-            /* background-image: url(https://i.pinimg.com/originals/68/15/57/681557d5e245061871e6036e360c8b88.jpg); */
-            background-image: url(https://pngimg.com/uploads/star/star_PNG1592.png);
-            /* background-image: url(https://media.revistavanityfair.es/photos/62cfdfdf841167e78fa3009c/1:1/w_3117,h_3117,c_limit/GettyImages-1401272301.jpg); */
+            background-image: url(./star.png);
         }
 
         .intro {
@@ -109,6 +111,14 @@
                 div.dataset.danimaRotationSpeed = '2, 2';
                 div.dataset.danimaRotationLimit = '85';
                 div.dataset.danimaTranslationSpeed = '2, 2';
+                const sizeMin = 2;
+                const sizeMax = 20;
+                const size = Math.random() * sizeMax;
+                div.style.width = `${size < sizeMin ? sizeMin : size}rem`;
+                div.style.height = `${size < sizeMin ? sizeMin : size}rem`;
+                div.style.filter = `blur(${Math.random() * 2}rem)`;
+                div.style.zIndex = Math.round(Math.random() * 4);
+                div.style.opacity = Math.random() * 0.7;
                 document.body.appendChild(div);
             }
         });
@@ -117,7 +127,7 @@
 </head>
 <body>
     <div class="intro">
-        <div class="danima-elem intro-content" data-danima-rotation-speed="0.3, 0.3" data-danima-translation-speed="0.3, 0.3" data-danima-rotation-limit="20">
+        <div class="danima-elem intro-content" data-danima-rotation-speed="0.3, 0.3" data-danima-translation-speed="1, 1" data-danima-rotation-limit="20">
             <h1>Danima JS</h1>
             <p>Cursor based transform animations library for HTML Elements.
                 
@@ -125,9 +135,9 @@
             <p>David Fuentes (GitHub: davefellow)</p></p>
         </div>
     </div>
-    <div class="danima-elem box--1" data-danima-rotation-speed="1,1" data-danima-translation-speed="1,1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
-    <div class="danima-elem box--2" data-danima-rotation-speed="1,1" data-danima-translation-speed="-0.3,-0.2" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
-    <div class="danima-elem box--3" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.2,0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
-    <div class="danima-elem box--4" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.05,-0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <!-- <div class="danima-elem box box--1" data-danima-rotation-speed="1,1" data-danima-translation-speed="1,1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <div class="danima-elem box box--2" data-danima-rotation-speed="1,1" data-danima-translation-speed="-0.3,-0.2" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <div class="danima-elem box box--3" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.2,0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div>
+    <div class="danima-elem box box--4" data-danima-rotation-speed="1,1" data-danima-translation-speed="0.05,-0.1" data-danima-rotation-limit="30" data-danima-translation-limit="30"></div> -->
 </body>
 </html>
