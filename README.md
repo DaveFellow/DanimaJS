@@ -4,6 +4,12 @@ Cursor based transform animations library for HTML Elements.
 ## Created By
 David Fuentes (@davefellow)
 
+## GitHub
+https://github.com/DaveFellow/DanimaJS
+
+## Showcase
+https://davefellow.github.io/DanimaJS/showcase/
+
 ## How to use
 You have to add the CSS class "danima-elem" to an HTML element in order for it to be recognized by the library.
 
